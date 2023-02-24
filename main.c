@@ -3,10 +3,9 @@
 #include <string.h>
 #include <unistd.h>
 
-#define RANKS	      8
-#define FILES	      8
-#define MAXPOSITIONS  8
-#define MAXCANDIDATES 64
+#define RANKS	     8
+#define FILES	     8
+#define MAXPOSITIONS 8
 
 typedef struct gamepiece_t {
 	int rank;
@@ -74,6 +73,7 @@ void backtrack(position_stack_t *p) {
 
 	if (accept(p)) {
 		print_state(p);
+		return;
 	}
 
 	for (int rank = p->len ? p->positions[p->len - 1].rank + 1 : 0;
