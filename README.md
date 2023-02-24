@@ -7,9 +7,9 @@ Considering that there are 64 choose 8 possible ways to place the pieces across 
 
 ### solution
 What helped me the most in understanding the nature of backtracking was visualizing the paths towards each given solution as a tree: at the root, an empty board.
-Each successive level adds a piece to the board, and each new addition can either be considered correct or incorrect. If incorrect, we effective prune that subtree by backtracking.
+Each successive level adds a piece to the board, and each new addition can either be considered correct or incorrect. If incorrect, we effectively prune that subtree by backtracking.
 
-The other breakthrough I had was recognizing that one can avoid using a hash map to memoize previous states by simply only placing the next piece at some point after the last played piece. This ensures that no duplicate positions are followed, and also avoids the hassle of programming a hash map for the previous states (although the chess board could conveniently be hashed into a unique 64 bit integer).
+The other breakthrough I had was recognizing that one can avoid using a hash map to memoize previous states by only placing the next piece at some point after the last played piece. This ensures that no duplicate positions are followed, and also avoids the hassle of programming a hash map for the previous states (although the chess board state could conveniently be hashed into a unique 64 bit integer).
 
 ### credits
 The wikipedia page on backtracking was quite useful.
