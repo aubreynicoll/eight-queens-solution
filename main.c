@@ -15,6 +15,7 @@ typedef struct gamepiece_t {
 typedef struct position_stack_t {
 	gamepiece_t positions[MAXPOSITIONS];
 	int	    len;
+	int	    solutions;
 } position_stack_t;
 
 void print_frameno(void);
@@ -72,7 +73,8 @@ void backtrack(position_stack_t *p) {
 	}
 
 	if (accept(p)) {
-		print_state(p);
+		// print_state(p);
+		++p->solutions;
 		return;
 	}
 
@@ -112,15 +114,13 @@ int reject(position_stack_t *p) {
 }
 
 int accept(position_stack_t *p) {
-	if (p->len == MAXPOSITIONS) {
-		return 1;
-	}
-
-	return 0;
+	return p->len == MAXPOSITIONS;
 }
 
 int main(void) {
 	position_stack_t positions = {};
 
 	backtrack(&positions);
+
+	printf("found %d solutions\n", positions.solutions);
 }
