@@ -3,7 +3,7 @@ I learned about backtracking and just had to use it.
 
 This program prints the 92 possible ways of positioning 8 queens on a chessboard such that no queen threatens another.
 
-Considering that there are 64 choose 8 possible ways to place the pieces across the board (~4.4 trillion), I'm happy to say this program is reasonably fast. It runs in 8ms on my machine with optimizations turned on.
+Considering that there are 64 choose 8 possible ways to place the pieces across the board (~4.4 billion), I'm happy to say this program is reasonably fast. It runs in 8ms on my machine with optimizations turned on.
 
 ### solution
 What helped me the most in understanding the nature of backtracking was visualizing the paths towards each given solution as a tree: at the root, an empty board.
